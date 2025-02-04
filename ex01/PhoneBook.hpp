@@ -6,16 +6,21 @@
 /*   By: sidiallo <sidiallo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 17:53:43 by sidiallo          #+#    #+#             */
-/*   Updated: 2025/02/03 17:58:34 by sidiallo         ###   ########.fr       */
+/*   Updated: 2025/02/04 17:52:23 by sidiallo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PHONEBOOK_HPP
 # define PHONEBOOK_HPP
+# include "Contact.hpp"
 
 class PhoneBook
 {
-    
+
+    public:
+        PhoneBook(void);
+        void ContactList(Contact *AddContact,int nbr);
+        ~PhoneBook(void);
 };
 
 
