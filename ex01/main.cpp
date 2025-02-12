@@ -6,7 +6,7 @@
 /*   By: sidiallo <sidiallo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 17:51:14 by sidiallo          #+#    #+#             */
-/*   Updated: 2025/02/04 18:06:07 by sidiallo         ###   ########.fr       */
+/*   Updated: 2025/02/12 15:30:12 by sidiallo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,6 @@
 int main()
 {
     int nbr;
-    PhoneBook Repertoire;
     
     nbr = 0;
     while(1)
@@ -65,11 +64,9 @@ int main()
         if(command == "ADD")
         {
         //   check_in_contact(i);
-            Contact AddContact;
-            Repertoire.ContactList(&AddContact,nbr);
+        }    
             nbr++;
             
-        }    
         else if(command == "SEARCH")
             printf("success SEARCH\n");
         else if(command == "EXIT")

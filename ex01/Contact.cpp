@@ -6,7 +6,7 @@
 /*   By: sidiallo <sidiallo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 18:03:32 by sidiallo          #+#    #+#             */
-/*   Updated: 2025/02/04 18:29:51 by sidiallo         ###   ########.fr       */
+/*   Updated: 2025/02/12 18:19:55 by sidiallo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,14 +39,6 @@ Contact::Contact()
     std::cin >> this->nickname;
     std::cout << "Phone_Number: ";
     std::cin >> this->phone_number;
-    // if (std::cin.fail()) 
-    //     {
-    //         std::cin.clear();                 // Réinitialise l'état d'erreur
-    //         std::cin.ignore(10000, '\n');     // Vide le buffer jusqu'à la fin de la ligne
-    //         std::cerr << "Erreur de saisie num." << std::endl;
-    //         exit(42);
-    //     }
-    
     std::cout << "Darkest Secret: ";
     std::cin >> this->darkest_secret;
     
