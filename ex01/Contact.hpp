@@ -6,7 +6,7 @@
 /*   By: sidiallo <sidiallo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 17:53:46 by sidiallo          #+#    #+#             */
-/*   Updated: 2025/02/12 18:26:41 by sidiallo         ###   ########.fr       */
+/*   Updated: 2025/03/25 19:19:56 by sidiallo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,26 @@
 # define CONTACT_HPP
 
 # include <iostream>
+#include <stdlib.h>
+#include <string>
+#include <iomanip> 
 
 class Contact
 {
     public:
         Contact();
-        void GetContact(std::string info)const;
-        SetFirst()
-        // Contact(std::string first,std::string last,std::string nick,int num,std::string dark,int i);
+        void setContact();
+        void displaySummary(int index) const;
+        void displayFull() const;
         ~Contact(void);
         
-    private :  
-        std::string firstname;
-        std::string lastname;
+    private :
+        void askForInput(const std::string& prompt, std::string& field);
+        std::string firstName;
+        std::string lastName;
         std::string nickname;
-        std::string PhoneNumber;
-        std::string DarkestSecret;
+        std::string phoneNumber;
+        std::string darkestSecret;
     
         
 };

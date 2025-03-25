@@ -6,45 +6,71 @@
 /*   By: sidiallo <sidiallo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 18:03:32 by sidiallo          #+#    #+#             */
-/*   Updated: 2025/02/12 18:19:55 by sidiallo         ###   ########.fr       */
+/*   Updated: 2025/03/25 19:01:14 by sidiallo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
-#include <iostream>
- #include <stdlib.h>
 
 
 
-// Contact::Contact(std::string first,std::string last,std::string nick,int num,std::string dark,int i)
-// {
-//     std::cout << "constructor called : "<< i<< std::endl;
-//     this->firstname = first;
-//     this->lastname = last;
-//     this->nickname = nick;
-//     this->phone_number = num;
-//     this->darkest_secret = dark
-    
-// }
 
 Contact::Contact()
-{
-//     std::cout << "constructor called : "<< nbr<< std::endl;
-//     std::cout << "Add a new contact : "<< nbr<< std::endl;
-    std::cout << "Firstname: ";
-    std::cin >> this->firstname;
-    std::cout << "Lastname: ";
-    std::cin >> this->lastname;
-    std::cout << "Nickname: ";
-    std::cin >> this->nickname;
-    std::cout << "Phone_Number: ";
-    std::cin >> this->phone_number;
-    std::cout << "Darkest Secret: ";
-    std::cin >> this->darkest_secret;
+{  
     
 }
 
+void  Contact::askForInput(const std::string& prompt, std::string& field) 
+{
+    std::cout << prompt;
+    std::getline(std::cin, field);
+    if (field.empty()) 
+    {
+        std::cout << "that field must not be empty. please try.\n";
+        askForInput(prompt, field);
+    }
+}
 
+void Contact::setContact() 
+{
+    askForInput("First Name: ", firstName);
+    askForInput("Last Name: ", lastName);
+    askForInput("Nickname: ", nickname);
+    askForInput("Phone Number: ", phoneNumber);
+    askForInput("Darkest Secret: ", darkestSecret);
+}
+
+
+void Contact::displayFull()const 
+{
+    std::cout << "FirstName: " << firstName << std::endl;
+    std::cout << "LastName: " << lastName << std::endl;
+    std::cout << "Nickname: " << nickname << std::endl;
+    std::cout << "Phone Number: " << phoneNumber << std::endl;
+    std::cout << "Darkest Secret: " << darkestSecret << std::endl;
+}
+
+void Contact::displaySummary(int index) const 
+{
+    std::cout << "|" << std::setw(10) << index;
+
+    if (firstName.length() > 10)
+        std::cout << "|" << firstName.substr(0, 9) << ".";
+    else
+        std::cout << "|" << std::setw(10) << firstName;
+
+    if (lastName.length() > 10)
+        std::cout << "|" << lastName.substr(0, 9) << ".";
+    else
+        std::cout << "|" << std::setw(10) << lastName;
+
+    if (nickname.length() > 10)
+        std::cout << "|" << nickname.substr(0, 9) << ".";
+    else
+        std::cout << "|" << std::setw(10) << nickname;
+
+    std::cout << "|" << std::endl;
+}
 
 
 Contact::~Contact(void)

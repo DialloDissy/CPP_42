@@ -6,7 +6,7 @@
 /*   By: sidiallo <sidiallo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 17:53:43 by sidiallo          #+#    #+#             */
-/*   Updated: 2025/02/12 18:17:02 by sidiallo         ###   ########.fr       */
+/*   Updated: 2025/03/25 18:59:07 by sidiallo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,14 @@
 class PhoneBook
 {
     private:
-        Contact contacts[7];
+        Contact contacts[8];
+        int totalContacts;
     public:
-        PhoneBook(void);
+        PhoneBook();
+        ~PhoneBook();
+        void addContact();
+        void searchContacts();
         
-        void ContactList(Contact *AddContact,int nbr);
-        ~PhoneBook(void);
 };
 
 
