@@ -6,7 +6,7 @@
 /*   By: sidiallo <sidiallo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 17:51:14 by sidiallo          #+#    #+#             */
-/*   Updated: 2025/03/25 19:20:47 by sidiallo         ###   ########.fr       */
+/*   Updated: 2025/03/26 16:00:18 by sidiallo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,11 @@ int main()
     {
         std::cout << "Enter command (ADD, SEARCH, EXIT): ";
         std::getline(std::cin, command);
-
+        if (std::cin.eof())
+        {
+            std::cout << "I/O error while reading\n";
+            break;   
+        }
         if (command == "ADD")
             phoneBook.addContact();
         else if (command == "SEARCH")
